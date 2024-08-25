@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:homework_app_10/screen/home_page.dart';
+import 'package:homework_app_10/screen/payment_screen.dart';
 
 class WelcomeScreen extends StatelessWidget {
   const WelcomeScreen({super.key});
@@ -15,7 +16,22 @@ class WelcomeScreen extends StatelessWidget {
                 image: AssetImage("assets/Splash Screen.png"),
                 fit: BoxFit.fill)),
         child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
           children: [
+            GestureDetector(
+              onTap: () {
+                Navigator.push(context,
+                    MaterialPageRoute(builder: (context) => PaymentScreen()));
+              },
+              child: Container(
+                margin: EdgeInsets.only(top: 100, left: 25),
+                height: 63,
+                width: 63,
+                decoration: BoxDecoration(
+                    shape: BoxShape.circle, color: Color(0xFFCDFFB6)),
+                child: Image.asset("assets/D.png"),
+              ),
+            ),
             Spacer(),
             Container(
               child: Column(
