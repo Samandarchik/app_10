@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:homework_app_10/color.dart';
 import 'package:homework_app_10/screen/checkout.dart';
-import 'package:homework_app_10/screen/vegetables_class.dart';
+import 'package:homework_app_10/widget/vegetables_class.dart';
 
 class ItemScreen extends StatelessWidget {
   final int index2;
@@ -9,7 +9,7 @@ class ItemScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    VegetablesClass vegetablesClass = VegetablesList[index2];
+    VegetablesClass vegetablesClass = vegetablesList[index2];
 
     return Scaffold(
       body: Container(

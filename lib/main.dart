@@ -1,7 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:homework_app_10/color.dart';
-import 'package:homework_app_10/screen/payment_screen.dart';
-import 'package:homework_app_10/screen/checkout.dart';
 import 'package:homework_app_10/screen/welcome_screen.dart';
 
 void main() => runApp(const MyApp());
@@ -12,12 +10,13 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      debugShowCheckedModeBanner: false,
       theme: ThemeData(
           scaffoldBackgroundColor: kbackgroundColor,
-          appBarTheme: AppBarTheme(
+          appBarTheme: const AppBarTheme(
               backgroundColor: kbackgroundColor,
               surfaceTintColor: kbackgroundColor)),
-      home: WelcomeScreen(),
+      home: const WelcomeScreen(),
     );
   }
 }

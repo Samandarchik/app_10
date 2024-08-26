@@ -12,7 +12,7 @@ class VegetablesClass {
       required this.title});
 }
 
-List<VegetablesClass> VegetablesList = [
+List<VegetablesClass> vegetablesList = [
   VegetablesClass(
       name: "Boston Lettuce",
       price: 1.10,

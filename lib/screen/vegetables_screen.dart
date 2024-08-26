@@ -30,9 +30,14 @@ class VegetablesCard extends StatelessWidget {
                   height: 20,
                 ),
                 MySearchBar(),
-                Genres(index: index),
+                Genres(index: index, vegetablesbuildList: vegetablesbuildList),
+                Genres(index: index, vegetablesbuildList: vegetablesbuildList1),
+                SizedBox(
+                  height: 10,
+                ),
                 Expanded(
                     child: ListView.builder(
+                        padding: EdgeInsets.zero,
                         itemCount: categoriesClassList.length,
                         itemBuilder: (context, index1) {
                           return ListCard(
@@ -46,18 +51,4 @@ class VegetablesCard extends StatelessWidget {
       ),
     );
   }
-}
-
-class VegetablesClass {
-  final String name;
-  final double price;
-  final String kg;
-  final String gram;
-  final String title;
-  VegetablesClass(
-      {required this.name,
-      required this.price,
-      required this.kg,
-      required this.gram,
-      required this.title});
 }

@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:homework_app_10/color.dart';
 import 'package:homework_app_10/screen/item_screen.dart';
-import 'package:homework_app_10/screen/vegetables_class.dart';
+import 'package:homework_app_10/widget/vegetables_class.dart';
 
 class ListCard extends StatelessWidget {
   final int index2;
@@ -9,7 +9,7 @@ class ListCard extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    VegetablesClass itemCard = VegetablesList[index2];
+    VegetablesClass itemCard = vegetablesList[index2];
     return GestureDetector(
       onTap: () {
         Navigator.push(context, MaterialPageRoute(builder: (context) {
@@ -17,12 +17,12 @@ class ListCard extends StatelessWidget {
         }));
       },
       child: Container(
-        margin: EdgeInsets.only(bottom: 10),
+        margin: const EdgeInsets.only(bottom: 10),
         child: Row(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             Container(
-              margin: EdgeInsets.only(right: 20),
+              margin: const EdgeInsets.only(right: 20),
               height: 128,
               width: 177,
               decoration: BoxDecoration(
@@ -42,16 +42,16 @@ class ListCard extends StatelessWidget {
                 children: [
                   Text(
                     itemCard.name,
-                    style: TextStyle(
+                    style: const TextStyle(
                         color: Colors.black,
                         fontWeight: FontWeight.bold,
                         fontSize: 20),
                   ),
-                  SizedBox(
+                  const SizedBox(
                     height: 10,
                   ),
                   Price(itemCard: itemCard),
-                  SizedBox(
+                  const SizedBox(
                     height: 10,
                   ),
                   Row(
@@ -64,7 +64,7 @@ class ListCard extends StatelessWidget {
                             border: Border.all(color: Colors.black26),
                             borderRadius: BorderRadius.circular(10),
                             color: kWhiteColor),
-                        child: Icon(
+                        child: const Icon(
                           Icons.favorite_border,
                           color: Colors.black38,
                         ),
@@ -75,7 +75,7 @@ class ListCard extends StatelessWidget {
                         decoration: BoxDecoration(
                             borderRadius: BorderRadius.circular(10),
                             color: kPrimeryColor),
-                        child: Icon(
+                        child: const Icon(
                           Icons.shopping_cart_checkout,
                           color: kWhiteColor,
                         ),
@@ -104,15 +104,15 @@ class Price extends StatelessWidget {
   Widget build(BuildContext context) {
     return RichText(
       text: TextSpan(
-        style: TextStyle(color: Colors.black),
+        style: const TextStyle(color: Colors.black),
         children: [
           TextSpan(
             text: itemCard.price.toString(),
-            style: TextStyle(fontSize: 25, fontWeight: FontWeight.bold),
+            style: const TextStyle(fontSize: 25, fontWeight: FontWeight.bold),
           ),
           TextSpan(
               text: "  € / ${itemCard.kg}",
-              style: TextStyle(fontSize: 18, color: Colors.black38))
+              style: const TextStyle(fontSize: 18, color: Colors.black38))
         ],
       ),
     );
