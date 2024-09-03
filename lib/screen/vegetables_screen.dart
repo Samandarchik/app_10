@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:homework_app_10/genres.dart';
 import 'package:homework_app_10/screen/home_page.dart';
 import 'package:homework_app_10/widget/list_card.dart';
+import 'package:homework_app_10/widget/search.dart';
 
 class VegetablesCard extends StatelessWidget {
   final int index;
@@ -16,7 +17,7 @@ class VegetablesCard extends StatelessWidget {
     return Scaffold(
       body: Stack(
         children: [
-          Positioned(right: 0, top: 0, child: Image.asset("assets/Vector.png")),
+          Positioned(right: 0, top: 0, child: Image.asset("assets/barg.png")),
           Padding(
             padding: const EdgeInsets.only(left: 20.0, right: 20, top: 100),
             child: Column(

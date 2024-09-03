@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_staggered_grid_view/flutter_staggered_grid_view.dart';
 import 'package:homework_app_10/color.dart';
 import 'package:homework_app_10/screen/vegetables_screen.dart';
+import 'package:homework_app_10/widget/search.dart';
 
 class HomePage extends StatelessWidget {
   const HomePage({super.key});
@@ -87,40 +88,6 @@ class HomePage extends StatelessWidget {
                     }))
           ],
         ),
-      ),
-    );
-  }
-}
-
-class MySearchBar extends StatelessWidget {
-  const MySearchBar({
-    super.key,
-  });
-
-  @override
-  Widget build(BuildContext context) {
-    return Container(
-      width: double.infinity,
-      padding: const EdgeInsets.all(5),
-      height: 60,
-      decoration: BoxDecoration(
-          border: Border.all(color: Colors.black12),
-          color: Colors.white,
-          borderRadius: BorderRadius.circular(30)),
-      child: TextFormField(
-        cursorColor: Colors.black,
-        decoration: const InputDecoration(
-            focusColor: Colors.black,
-            icon: Padding(
-              padding: EdgeInsets.all(8.0),
-              child: Icon(
-                Icons.search_outlined,
-                size: 35,
-              ),
-            ),
-            hintText: "Search",
-            border: InputBorder.none,
-            hintStyle: TextStyle(color: Colors.black38)),
       ),
     );
   }

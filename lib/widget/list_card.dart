@@ -17,7 +17,7 @@ class ListCard extends StatelessWidget {
         }));
       },
       child: Container(
-        margin: const EdgeInsets.only(bottom: 10),
+        margin: const EdgeInsets.only(bottom: 20),
         child: Row(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [

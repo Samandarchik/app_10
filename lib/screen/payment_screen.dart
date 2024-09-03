@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:homework_app_10/color.dart';
 
 class PaymentScreen extends StatefulWidget {
@@ -61,7 +62,7 @@ class _PaymentScreenState extends State<PaymentScreen> {
                     ),
                     Positioned(
                       top: 100,
-                      left: MediaQuery.of(context).size.width * .07,
+                      left: 15,
                       child: Text(
                         cardNumber,
                         style: kInfoCard,
@@ -99,9 +100,10 @@ class _PaymentScreenState extends State<PaymentScreen> {
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     MyTextFromFild(
+                      maxLines: 20,
                       dateType: false,
                       onChanged: (value) {
-                        updateCardName(value); // Update card name on change
+                        updateCardName(value);
                       },
                       images: "assets/mc_symbol.png",
                       icon: icon,
@@ -109,6 +111,7 @@ class _PaymentScreenState extends State<PaymentScreen> {
                       cardName: "Name on card",
                     ),
                     MyTextFromFild(
+                      maxLines: 16,
                       dateType: true,
                       images: "assets/mc_symbol.png",
                       icon: true,
@@ -122,6 +125,7 @@ class _PaymentScreenState extends State<PaymentScreen> {
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
                         MyTextFromFild(
+                            maxLines: 4,
                             dateType: true,
                             onChanged: (value) {},
                             images: "assets/mc_symbol.png",
@@ -129,6 +133,7 @@ class _PaymentScreenState extends State<PaymentScreen> {
                             cardName: "Expiry date",
                             width1: MediaQuery.of(context).size.width * .42),
                         MyTextFromFild(
+                            maxLines: 4,
                             dateType: true,
                             onChanged: (value) {},
                             images: "assets/Hint.png",
@@ -175,6 +180,7 @@ class MyTextFromFild extends StatelessWidget {
   final double width1;
   final Function(String) onChanged;
   final bool dateType;
+  final int maxLines;
 
   MyTextFromFild(
       {super.key,
@@ -183,7 +189,8 @@ class MyTextFromFild extends StatelessWidget {
       required this.cardName,
       required this.images,
       required this.onChanged,
-      required this.dateType});
+      required this.dateType,
+      required this.maxLines});
 
   @override
   Widget build(BuildContext context) {
@@ -191,10 +198,11 @@ class MyTextFromFild extends StatelessWidget {
       width: width1,
       color: Colors.white,
       child: TextField(
+        maxLength: maxLines,
         onChanged: onChanged,
         keyboardType: dateType ? TextInputType.number : TextInputType.name,
         decoration: InputDecoration(
-          hintMaxLines: 16,
+          counterText: "",
           labelText: cardName,
           suffixIcon: icon
               ? Padding(
